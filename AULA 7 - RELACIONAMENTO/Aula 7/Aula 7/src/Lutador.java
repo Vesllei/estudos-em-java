@@ -6,22 +6,23 @@ public class Lutador {
     private String nacionalidade;
     private int idade;
     private double altura;
-    private String peso;
+    private float peso;
     private String categoria;
     private int vitorias;
     private int derrotas;
     private int empates;
 
-    public Lutador(String nome, String nacionalidade, int idade, double altura, String peso,
+    public Lutador(String nome, String nacionalidade, int idade, double altura, float peso,
             int vitorias, int derrotas, int empates) {
         this.nome = nome;
         this.nacionalidade = nacionalidade;
         this.idade = idade;
         this.altura = altura;
-        this.peso = peso;
+        this.setPeso(peso);
         this.vitorias = vitorias;
         this.derrotas = derrotas;
         this.empates = empates;
+
     }
 
     public String getNome() {
@@ -56,28 +57,28 @@ public class Lutador {
         this.altura = altura;
     }
 
-    public String getPeso() {
+    public float getPeso() {
         return peso;
     }
 
-    public void setPeso(String peso) {
+    public void setPeso(float peso) {
         this.peso = peso;
-        setCategoria(peso);
+        this.setCategoria();
     }
 
     public String getCategoria() {
         return categoria;
     }
 
-    public void setCategoria(String categoria) {
-        double categoriaDouble = Double.parseDouble(categoria);
-        if (categoriaDouble < 52.2) {
+    private void setCategoria() {
+
+        if (this.peso < 52.2) {
             this.categoria = "Inválido";
-        } else if (categoriaDouble <= 70.3) {
+        } else if (this.peso <= 70.3) {
             this.categoria = "Leve";
-        } else if (categoriaDouble <= 83.9) {
+        } else if (this.peso <= 83.9) {
             this.categoria = "Médio";
-        } else if (categoriaDouble <= 120.2) {
+        } else if (this.peso <= 120.2) {
             this.categoria = "Pesado";
         } else
             this.categoria = "Inválido";
@@ -116,6 +117,7 @@ public class Lutador {
         System.out.println("Idade: " + idade);
         System.out.println("Altura: " + altura + " metros");
         System.out.println("Peso: " + peso + " kg");
+        System.out.println("Categoria: " + categoria);
         System.out.println("Nacionalidade: " + nacionalidade);
         System.out.println("Vitórias: " + vitorias);
         System.out.println("Derrotas: " + derrotas);
