@@ -16,15 +16,24 @@ public class App {
         Lutador l4 = new Lutador("Bruce Lee", "China", 38, 1.79, 89.7f, 18, 0, 1);
         listaDeLutadores.add(l4);
 
-        l1.apresentar();
-        System.out.println("");
-        l2.apresentar();
-        System.out.println(" ");
-        l3.apresentar();
-        System.out.println("");
-        l4.apresentar();
-        l3.ganharLuta();
-        System.out.println("");
-        l3.apresentar();
+        // l1.apresentar();
+        // System.out.println("");
+        // l2.apresentar();
+        // System.out.println(" ");
+        // l3.apresentar();
+        // System.out.println("");
+        // l4.apresentar();
+        // l3.ganharLuta();
+        // System.out.println("");
+        // l3.apresentar();
+
+        Luta luta1 = new Luta();
+        luta1.marcarLuta(l1, l1);
+        luta1.lutar();
+
+        // l1.apresentar();
+        // System.out.println("");
+        // l3.apresentar();
+
     }
 }
