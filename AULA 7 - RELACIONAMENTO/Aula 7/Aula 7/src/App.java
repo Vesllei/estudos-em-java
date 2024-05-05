@@ -1,8 +1,9 @@
 import java.util.ArrayList;
 
 public class App {
-    public static ArrayList<Lutador> listaDeLutadores = new ArrayList<>();
 
+     public static ArrayList<Lutador> listaDeLutadores = new ArrayList<>();
+       
     public static void main(String[] args) throws Exception {
         Lutador l1 = new Lutador("Pretty Boy", "França", 31, 1.75, 68.9f, 11, 3, 1);
         listaDeLutadores.add(l1);
